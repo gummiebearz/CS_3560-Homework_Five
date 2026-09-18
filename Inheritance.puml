@@ -1,0 +1,71 @@
+@startuml
+'Exercise 1: Inheritance
+
+class Employee {
+    - firstName: String
+    - lastName : String
+    - SSN : String
+
+    + Employee(firstName : String, lastName : String, SSN : String)
+
+    + getFirstName() : String
+    + getLastName(): String
+    + getSSN(): String
+    + display() : void
+
+    + setFirstName(firstName : String) : void
+    + setLastName(lastName : String) : void
+    + setSSN(SSN : String) : void
+}
+
+class SalariedEmployee {
+    - weeklySalary : Double
+
+    + SalariedEmployee(firstName : String, lastName : String, SSN : String, weeklySalary : Double)
+
+    + getWeeklySalary() : Double
+    + setWeeklySalary(weeklySalary : Double) : void
+}
+class HourlyEmployee {
+    - wage : Double
+    - hoursWorked : Double
+
+    + HourlyEmployee(firstName : String, lastName : String, SSN : String, wage : Double, hoursWorked : Double)
+
+    + getWage() : Double
+    + getHoursWorked() : Double
+
+    + setWage(wage : Double) : void
+    + setHoursWorked(hoursWorked : Double) : void
+}
+
+class CommissionEmployee {
+    - commissionRate : Double
+    - grossSales : Double
+
+    + CommissionEmployee(firstName : String, lastName : String, SSN : String, commissionRate : Double, grossSales : Double)
+
+    + getCommissionRate() : Double
+    + getGrossSales() : Double
+
+    + setCommissionRate(commissionRate : Double) : void
+    + setGrossSales(grossSales : Double) : void
+}
+
+class BaseEmployee {
+    - baseSalary : Double
+
+    + BaseEmployee(firstName : String, lastName : String, SSN : String, baseSalary : Double)
+
+    + getBaseSalary() : Double
+
+    + setBaseSalary(baseSalary : Double) : void
+}
+
+'Inheritance hierarchy (Each class, except Employee, is a specialization of Employee)
+Employee <|-- SalariedEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- CommissionEmployee
+Employee <|-- BaseEmployee
+
+@enduml
