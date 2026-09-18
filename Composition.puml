@@ -1,0 +1,36 @@
+@startuml
+'Exercise 5: Composition
+
+class File {
+    - fileName : String
+
+    + File(fileName : String)
+
+    + getFileName() : String
+    + print() : void
+
+    + setFileName(fileName : String) : void
+}
+
+class Folder {
+    - folderName : String
+    - files : File[]
+    - subfolders : Folder[]
+
+    + Folder(folderName : String)
+
+    + getFolderName() : String
+    + getFile(fileName : String) : File
+    + print() : void
+
+    + setFolderName(folderName : String) : void
+    + addFile(fileName : String) : File
+    + removeFile(fileName : String) : void
+    + addSubfolder(folderName : String) : Folder
+    + removeSubfolder(folderName : String) : void
+}
+
+Folder "1" *-- "0..*" File : contains
+Folder "1" *-- "0..*" Folder : contains
+
+@enduml
