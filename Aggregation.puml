@@ -35,10 +35,10 @@ class Textbook {
 
 class Course {
     - name : String
-    - instructors : Instructor[]
-    - textbooks : Textbook[]
+    - instructor : Instructor
+    - textbook : Textbook
 
-    + Course(name : String, instructors : Instructor[], textbooks : Textbook[])
+    + Course(name : String, instructor : Instructor, textbook : Textbook)
 
     + getName() : String
     + print() : void
@@ -47,7 +47,7 @@ class Course {
 }
 
 ' Aggregation relationship
-Course "1" o-- "many" Textbook
-Course "1" o-- "many" Instructor
+Course o-- Textbook
+Course o-- Instructor
 
 @enduml
