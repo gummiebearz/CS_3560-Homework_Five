@@ -1,0 +1,53 @@
+@startuml
+'Exercise 4: Aggregation "HAS-A"
+
+class Instructor {
+    - firstName : String
+    - lastName : String
+    - officeNumber : String
+
+    + Instructor(firstName : String, lastName : String, officeNumber : String)
+
+    + getFirstName() : String
+    + getLastName() : String
+    + getOfficeNumber() : String
+
+    + setFirstName(firstName : String) : void
+    + setLastName(lastName : String) : void
+    + setOfficeNumber(officeNumber : String) : void
+}
+
+class Textbook {
+    - title : String
+    - author : String
+    - publisher : String
+
+    + Textbook(title : String, author : String, publisher : String)
+
+    + getTitle() : String
+    + getAuthor() : String
+    + getPublisher() : String
+
+    + setTitle(title : String) : void
+    + setAuthor(author : String) : void
+    + setPublisher(publisher : String) : void
+}
+
+class Course {
+    - name : String
+    - instructors : Instructor[]
+    - textbooks : Textbook[]
+
+    + Course(name : String, instructors : Instructor[], textbooks : Textbook[])
+
+    + getName() : String
+    + print() : void
+
+    + setName(name : String) : void
+}
+
+' Aggregation relationship
+Course "1" o-- "many" Textbook
+Course "1" o-- "many" Instructor
+
+@enduml
