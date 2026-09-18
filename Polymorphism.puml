@@ -1,0 +1,44 @@
+@startuml
+'Exercise 3: Polymorphism
+
+class Ship {
+    - name : String
+    - yearBuilt : String
+
+    + Ship(name : String, yearBuilt : String)
+
+    + getName() : String
+    + getYearBuilt() : String
+    + print() : void
+
+    + setName(name : String) : void
+    + setYearBuilt(yearBuilt : String) : void
+}
+
+class CruiseShip {
+    - maxPassengers : Integer
+
+    + CruiseShip(name : String, yearBuilt : String, maxPassengers : Integer)
+
+    + getMaxPassengers() : Integer
+    + print() : void
+
+    + setMaxPassengers(maxPassengers : Integer) : void
+}
+
+class CargoShip {
+    - capacity : Integer
+
+    + CargoShip(name : String, yearBuilt : String, capacity : Integer)
+
+    + getCapacity() : Integer
+    + print() : void
+
+    + setCapacity(capacity : Integer) : void
+}
+
+'Polymorphism relationship
+Ship <|-- CruiseShip
+Ship <|-- CargoShip
+
+@enduml
