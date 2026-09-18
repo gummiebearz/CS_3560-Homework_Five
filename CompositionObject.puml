@@ -10,33 +10,11 @@ sourceFiles : folderName = "Source Files"
 object ".phalcon : Folder" as phalcon
 phalcon : folderName = ".phalcon"
 
-object "app : Folder" as app
-app : folderName = "app"
-
 object "cache : Folder" as cache
 cache : folderName = "cache"
 
 object "public : Folder" as public
 public : folderName = "public"
-
-'Subfolders inside folder 'app'
-object "config : Folder" as config
-config : folderName = "config"
-
-object "controllers : Folder" as controllers
-controllers : folderName = "controllers"
-
-object "library : Folder" as library
-library : folderName = "library"
-
-object "migrations : Folder" as migrations
-migrations : folderName = "migrations"
-
-object "models : Folder" as models
-models : folderName = "models"
-
-object "views : Folder" as views
-views : folderName = "views"
 
 'Files inside subfolder 'public'
 object ".htaccess : File" as htaccess
@@ -54,17 +32,8 @@ root *-- sourceFiles
 
 'Folder 'Source Files' contains the following subfolders
 sourceFiles *-- phalcon
-sourceFiles *-- app
 sourceFiles *-- cache
 sourceFiles *-- public
-
-'Folder 'app' contains the following subfolders
-app *-- config
-app *-- controllers
-app *-- library
-app *-- migrations
-app *-- models
-app *-- views
 
 'Subfolder 'public' contains the following files
 public *-- htaccess
