@@ -1,0 +1,23 @@
+@startuml
+' Object diagram for exercise 4 - aggregation
+
+object "textbook : Textbook" as textbook
+textbook : title = "Clean Code"
+textbook : author = "Robert C. Martin"
+textbook : publisher = "Prentice Hall"
+
+object "instructor : Instructor" as instructor
+instructor : firstName = "Nima"
+instructor : lastName = "Davarpanah"
+instructor : officeNumber = "3-2636"
+
+object "course : Course" as course
+course : name = "CS3560"
+course : instructor = instructor
+course : textbook = textbook
+
+' Aggregation relationship
+course o-- textbook
+course o-- instructor
+
+@enduml
