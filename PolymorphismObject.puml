@@ -1,26 +1,18 @@
 @startuml
 'Object Diagram
 
-object "ships : Ship[3]" as ships
+object "ship : Ship" as ship
+ship : name = "Astronomy"
+ship : yearBuilt = "1999"
 
-object "ships[0] : Ship" as ship1
-ship1 : name = "Astronomy"
-ship1 : yearBuilt = "1999"
+object "cruiseShip : CruiseShip" as cruiseShip
+cruiseShip : name = "Princess"
+cruiseShip : yearBuilt = "2009"
+cruiseShip : maxPassengers = 300
 
-object "ships[1] : CruiseShip" as ship2
-ship2 : name = "Princess"
-ship2 : yearBuilt = "2009"
-ship2 : maxPassengers = 300
-
-object "ships[2] : CargoShip" as ship3
-ship3 : name = "Zim Rotterdam"
-ship3 : yearBuilt = "2019"
-ship3 : capacity = 3000
-
-'Relationship
-' -- means plain association
-ships -- ship1
-ships -- ship2
-ships -- ship3
+object "cargoShip : CargoShip" as cargoShip
+cargoShip : name = "Zim Rotterdam"
+cargoShip : yearBuilt = "2019"
+cargoShip : capacity = 3000
 
 @enduml
